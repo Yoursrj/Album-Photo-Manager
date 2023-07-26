@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "'id": 2,
+      "name": "sahil"
+    },
+    {
+      "id": 3,
+      "name": "ankur"
+    },
+    {
+      "name": "Flora O'Connell",
+      "id": 4
+    },
+    {
+      "name": "Jamie Collins",
+      "id": 6
+    },
+    {
+      "name": "Beatrice Langworth",
+      "id": 8
+    },
+    {
+      "name": "Pat Mohr",
+      "id": 9
+    },
+    {
+      "name": "Cora Keebler",
+      "id": 10
+    },
+    {
+      "name": "Samuel Bashirian",
+      "id": 11
+    },
+    {
+      "name": "Judy Willms",
+      "id": 12
+    }
+  ],
+  "albums": [
+    {
+      "title": "Incredible Granite Sausages",
+      "id": 11
+    },
+    {
+      "title": "Electronic Wooden Computer",
+      "id": 12
+    },
+    {
+      "title": "Electronic Concrete Bacon",
+      "id": 13
+    },
+    {
+      "title": "Unbranded Wooden Hat",
+      "id": 14
+    },
+    {
+      "title": "Bespoke Soft Salad",
+      "id": 15
+    },
+    {
+      "title": "Sleek Bronze Hat",
+      "id": 16
+    },
+    {
+      "title": "Handmade Bronze Pizza",
+      "id": 17
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 11,
+      "url": "https://loremflickr.com/150/150/abstract?lock=92074",
+      "id": 1
+    },
+    {
+      "albumId": 11,
+      "url": "https://loremflickr.com/150/150/abstract?lock=5036",
+      "id": 2
+    }
+  ]
+}

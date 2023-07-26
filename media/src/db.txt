@@ -1,0 +1,114 @@
+/=db configuration
+
+{/*So on the server, we're going to have a list of users albums and photos.And we're going to make requests to fetch those lists and store them inside of our Redux store.
+And then once they're inside of our store, of course, we're going to access that data inside of React Component and render the list of users albums or photos out.
+Now, as we build this application, there are a couple of really big things I want to focus on here.Again, this application is all about data fetching, and I want you to walk away from this application
+with a really, really good understanding of how data fetching works in Redux.
+*/}
+
+
+{/* To summarize the last video, we now have a better idea of how we're going to store our information on JSON server.
+So we're going to have a list of users, we're going to have a list of albums and a list of photos.All this data is going to be stored in a normalized format.
+So for example, when we look at our user records, they're going to have an ID and a name.The ID is going to be randomly generated for us by JSON server.
+Then when we make an album, the albums are going to have a user ID property.This is going to tell us who owns or who this album belongs to.
+And then in turn, our photos are going to have an album ID and that tells us which album a particular photo belongs to.
+So we've got this kind of relational data going on.As a quick reminder on how we make requests off to JSON server.
+We've taken a look at this previously inside the course.But again, just a quick reminder, if we ever want to make a user, we can send a post request to localhost 3005/users.
+*/
+{
+    "users":[
+        {
+      "'id": 2,
+      "name": "sahil"
+    },
+    {
+      "id": 3,
+      "name": "ankur"
+    },
+    ],
+    "albums":[
+        {
+      "id": 10,
+      "title": "Hiking Trip",
+      "userId": 1
+    },
+    {
+      "title": "Incredible Granite Sausages",
+      "id": 11
+    },
+    ],
+    "photos":[]
+}
+}
+
+{/*Inside of the body of the request.We're going to include some properties we want to assign to this user.So in this case, a name of Myra, maybe.
+So we make that request, we would end up adding in name of Myra.And json Server is also going to give this record an ID as well.
+So it might be given an ID automatically of one.Then if we ever want to fetch all of our users, we can make a gift request to localhost 3005.
+Users that would retrieve all these different users.And if we ever want to delete a user, we'll make a delete request.
+And at the very end of the URL, we're going to put a slash and then the ID of the user that we actually want to delete.
+*/}
+
+
+So in this normalized form, it's really easy to reflect these relationships between our data.The other way in which we might express these relationships is by using something called the normalised form.
+So in a normalized form, we're going to store all of our data in completely separate collections,in this case, maybe separate arrays.
+And to express relationships between our different records.We might have, say, albums over here in addition to an ID and a title.
+They might also have a user ID property.This would be a number and it would be the ID of the user who belongs to or something who owns that particular album.
+So in this case, albums one and two have a user ID of 50, so that means that they must be owned by mirror and albums.
+Three and four have a user ID of 63, so they must be owned by Ervin.Now the normalized form, we can very easily still figure out which users own which albums by just writing out very small snippets of code.
+{
+    "users":[
+        {
+      "'id": 2,
+      "name": "sahil"
+    },
+    {
+      "id": 3,
+      "name": "ankur"
+    },
+    ],
+    "albums":[
+        {
+      "id": 10,
+      "title": "Hiking Trip",
+      "userId": 1
+    },
+    {
+      "title": "Incredible Granite Sausages",
+      "id": 11
+    },
+    ],
+    "photos":[]
+}
+
+And then finally a user ID remember that the user ID is going to specify who owns this album or who it is tied to.So we want to put in an ID right here of some user who actually exists inside of our application.
+So for me, I'm going to add in the ID of one that is the ID for mirror.Make sure you add in a user ID for some user that actually exists in your app.
+Okay, let's save this.And now, finally, it is time for a test.So if I flip back over, I'll then open up my network request log and my console so I can make sure that the request is being sent off correctly.
+I'm then going to find the user who I just added the album for.I added an album for Mirror, so when I expand Mirror right here, I'm then going to be displaying the album list component on the screen.
+So here's albums list.
+
+{
+    "users":[
+        {
+      "'id": 2,
+      "name": "sahil",
+ ////     "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "ankur",
+ ////     "userId": 2
+    },
+    ],
+    "albums":[
+        {
+      "id": 10,
+      "title": "Hiking Trip",
+ ////     "userId": 3
+    },
+    {
+      "title": "Incredible Granite Sausages",
+      "id": 11
+    },
+    ],
+    "photos":[]
+}

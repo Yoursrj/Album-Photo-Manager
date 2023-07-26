@@ -1,0 +1,22 @@
+//problem--
+
+Let me show you one possible shortcoming.So remember, at a certain point in time, like next feature we work on, we're going to make sure that we can delete users.
+So to the left hand side of every username, we're going to show a little delete button.And we're probably going to want to make sure that we can show spinners here as well.
+So if I click on the delete button next to Ervin Houle.I would want to see a spinner up here, right there, so that the user understands.
+Ervin is in the process of being deleted.So if we try to use this same technique here of having this floating state and just adding in an additional Boolean, turns out this would not work out at all.
+And the reason for it is kind of simple.If we have a single property called deleting user and it can be only true or false, how would we ever know which user is being deleted?
+This single piece of state right here, if it's just true or false, it doesn't tell us which user is being deleted.
+So how would I know that Ervin is deleted?
+
+//solution -- fine grained loading state
+what we're talking about right now is fine grained loading state That's kind of the term for this
+It's a reference to having separate state variables for each different kind of requests that we might make
+you might have one piece of state to keep track of the fact that we are trying to add a user, another piece of state, to keep track of the fact that we're trying to delete a user and then maybe another to keep track of the fact that we are trying to load up the entire list of users. 
+separate state for each of these different kinds of request .Generally, there are kind of two options for implementation This is a real big generalization on my part
+There are different options here . We're going to kind of focus on two, and I would kind of classify all the different options out there into kind of two different approaches or families
+We're going to take a look at implementing one The other is going to be implemented for us with the Redux Toolkit query module, which we're going to use in a little bit
+
+
+//SECTION 21---264--REVISIT   (for more explaination)
+
+
